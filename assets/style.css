@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap');
 
 :root {
-    background-color: blueviolet;
+    background-color: rgb(186, 139, 230);
 }
 
 *{
@@ -10,5 +10,35 @@
     margin: 0px;
     padding: 0px;
     font-size: 16px;
-    font-family: 'Urbanist', cursive;
+    font-family: 'Urbanist';
+}
+
+h1 {
+    font-size: 5.4rem;
+    color: white;
+    margin-bottom: 5rem;
+}
+
+h2 {
+    font-size: 4.2rem;
+    margin-bottom: 4rem;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.home-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
