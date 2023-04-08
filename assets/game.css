@@ -33,4 +33,21 @@ body {
 .question {
     font-size: 5rem;
     padding-bottom: 1rem;
+    text-align: center;
+}
+
+#progressBar{
+    width: 20rem;
+    height: 3rem;
+    border: 0.3rem solid black;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+#progressBarFull {
+    height: 100%;
+    background-color: black;
+    width: 0%;
 }
