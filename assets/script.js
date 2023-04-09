@@ -1,5 +1,5 @@
 const question = document.querySelector('#question');
-const choice = Array.from(document.querySelectorAll('#.choice-text'));
+const choice = Array.from(document.querySelectorAll('#choice-text'));
 const progressText = document.querySelector('#progressText');
 const scores = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
@@ -57,3 +57,69 @@ var questions = [
         answer: 2,
     }
 ]
+
+const SCORE_POINTS = 100
+const MAX_QUESTIONS = 5
+
+startGame = () => {
+    questionBar = 0
+    score = 0
+    allQuestions = [...questions]
+    getNewQuestion()
+}
+
+getNewQuestion = () => {
+    if(allQuestions.length === 0 || questionBar > MAX_QUESTIONS){
+        localStorage.setItem('mostRecentScore', score)
+
+        return window.location.assign()
+    }
+
+    // questionBar++
+    // progressText.innerText = question ;{questionBar} of ;{MAX_QUESTIONS}
+    // progressBarFull.style.width = $[(questionBar/MAX_QUESTIONS) * 100]%
+
+    const questionsIndex = Math.floor(Math.random () * allQuestions.length)
+    currentQuestion = allQuestions[questionsIndex]
+    question.innerText = currentQuestion.question
+
+    choice.forEach(choice => {
+        const number = choice.dataset['number']
+        choice.innerText = currentQuestion['choice' + number]
+    })
+
+    allQuestions.splice(questionsIndex, 1)
+
+    acceptedAnswers = true
+}
+
+choice.forEach(choice=> {
+    choice.addEventListener('click', e => {
+        if(!acceptedAnswers) return
+
+        acceptedAnswers = false
+        const selectedChoice = e.target
+        const selectedAnswer = selectedChoice.dataset['number']
+
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+
+        if(classToApply === 'correct') {
+            incrementScore(SCORE_POINTS)
+        }
+
+        selectedChoice.parentElement.classList.add(classToApply)
+
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply)
+            getNewQuestion()
+        }, 1000)
+
+    })
+})
+
+incrementScore = num => {
+    score +=num
+    scoreText.innerText = score
+}
+
+startGame()
