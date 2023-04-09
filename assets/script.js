@@ -16,7 +16,7 @@ let allQuestions = []
 
 // questions
 
-var questions = {
+var questions = [
     {
         question: "Which of the following keywords is used to define a variable?",
         choice1: "var",
@@ -56,4 +56,4 @@ var questions = {
         choice4: "\**/",
         answer: 2,
     }
-}
+]
