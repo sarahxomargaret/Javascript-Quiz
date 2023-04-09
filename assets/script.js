@@ -7,6 +7,7 @@ const time = document.querySelector('#time');
 const incorrectAnswer = document.querySelector('#incorrectAnswer');
 const selectedAnswer = ""
 const selectedChoice = ""
+var classToApply = ""
 
 let currentQuestion = {}
 let acceptedAnswers = true
@@ -79,6 +80,10 @@ getNewQuestion = () => {
     // progressText.innerText = question ;{questionBar} of ;{MAX_QUESTIONS}
     // progressBarFull.style.width = $[(questionBar/MAX_QUESTIONS) * 100]%
 
+    questionCounter++
+    progressText.innerText = `Question ${questionBar} of ${MAX_QUESTIONS}`
+    progressBarFull.style.width = `${(questionBar/MAX_QUESTIONS) * 100}%`
+
     const questionsIndex = Math.floor(Math.random () * allQuestions.length)
     currentQuestion = allQuestions[questionsIndex]
     question.innerText = currentQuestion.question
@@ -101,7 +106,7 @@ choice.forEach(choice=> {
         const selectedChoice = e.target
         const selectedAnswer = selectedChoice.dataset['number']
 
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+        var classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
         if(classToApply === 'correct') {
             incrementScore(SCORE_POINTS)
