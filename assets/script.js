@@ -5,34 +5,26 @@ const scores = document.querySelector('#scores');
 const progressBarFull = document.querySelector('#progressBarFull');
 const time = document.querySelector('#time');
 const incorrectAnswer = document.querySelector('#incorrectAnswer');
-const selectedAnswer = ""
-const selectedChoice = ""
-var classToApply = ""
+var startBtn = document.getElementById('start')
+var homeContainer = document.getElementById('home')
+var quizContainer = document.getElementById('quiz')
 
-let currentQuestion = {}
-let acceptedAnswers = true
+var index = 0
 let score = 0
-let questionBar = 0
-let allQuestions = []
+
 
 // questions
 
 var questions = [
     {
         question: "Which of the following keywords is used to define a variable?",
-        choice1: "var",
-        choice2: "let",
-        choice3: "A and B",
-        choice4: "None of the above",
-        answer: 1,
+        choices: ["var", "let", "A and B", "None of the above"],
+        answer: "A and B",
     },
     {
         question: "Arrays are defined by which of the following statements",
-        choice1: "Ordered list of values",
-        choice2: "Ordered list of objects",
-        choice3: "Ordered list of strings",
-        choice4: "Ordered list of functions",
-        answer: 1,   
+        choices: ["Ordered list of values", 'Ordered list of objects', "Ordered list of strings", "Ordered list of functions"],
+        answer: "Ordered list of values",   
     },
     {
         question: "The 'function' and 'var' are known as:",
@@ -62,69 +54,43 @@ var questions = [
 const SCORE_POINTS = 100
 const MAX_QUESTIONS = 5
 
-startGame = () => {
-    questionBar = 0
-    score = 0
-    allQuestions = [...questions]
-    getNewQuestion()
+var startGame = function(){
+//  hide the home container
+homeContainer.classList.add('hidden')
+// display teh questions container
+quizContainer.classList.remove('hidden')
+// start the timer
+
+// run question function
+runQuestion()
 }
 
-getNewQuestion = () => {
-    if(allQuestions.length === 0 || questionBar > MAX_QUESTIONS){
-        localStorage.setItem('mostRecentScore', score)
+function runQuestion(){
+    quizContainer.innerHTML= ''
+    // create    
+    var h1El = document.createElement('h1')
 
-        return window.location.assign()
-    }
+    // add
+    h1El.textContent = questions[index].question 
 
-    // questionBar++
-    // progressText.innerText = question ;{questionBar} of ;{MAX_QUESTIONS}
-    // progressBarFull.style.width = $[(questionBar/MAX_QUESTIONS) * 100]%
 
-    questionCounter++
-    progressText.innerText = `Question ${questionBar} of ${MAX_QUESTIONS}`
-    progressBarFull.style.width = `${(questionBar/MAX_QUESTIONS) * 100}%`
+    // append
+    quizContainer.append(h1El)
 
-    const questionIndex = Math.floor(Math.random () * allQuestions.length)
-    currentQuestion = allQuestions[questionIndex]
-    question.innerText = currentQuestion.question
+    // for (let i = 0; i < arrayOfObjs[index].foods.length; i++) {
+    //     // create
+    //     var btnEl = document.createElement('button')
 
-    choice.forEach(choice => {
-        const number = choice.dataset['number']
-        choice.innerText = currentQuestion['choice' + number]
-    })
+    //     // add
+    //     btnEl.textContent = arrayOfObjs[index].foods[i]
+    //     btnEl.addEventListener('click', checkValue)
 
-    allQuestions.splice(questionIndex, 1)
+    //     // append
+    //     firstContainer.append(btnEl)
 
-    acceptedAnswers = true
+    // }
 }
 
-choice.forEach(choice=> {
-    choice.addEventListener('click', e => {
-        if(!acceptedAnswers) return
 
-        acceptedAnswers = false
-        const selectedChoice = e.target
-        const selectedAnswer = selectedChoice.dataset['number']
-
-        var classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
-
-        if(classToApply === 'correct') {
-            incrementScore(SCORE_POINTS)
-        }
-
-        selectedChoice.parentElement.classList.add(classToApply)
-
-        setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply)
-            getNewQuestion()
-        }, 1000)
-
-    })
-})
-
-incrementScore = num => {
-    score +=num
-    scoreText.innerText = score
-}
-
-startGame()
+// create event listener to start the game
+startBtn.addEventListener('click', startGame)
