@@ -1,8 +1,6 @@
 const question = document.querySelector('#question');
-const choice = Array.from(document.querySelectorAll('#choice'));
-const progressText = document.querySelector('#progressText');
+const choices = Array.from(document.querySelectorAll('#choices'));
 const scores = document.querySelector('#scores');
-const progressBarFull = document.querySelector('#progressBarFull');
 const time = document.querySelector('#time');
 const incorrectAnswer = document.querySelector('#incorrectAnswer');
 var startBtn = document.getElementById('start')
@@ -28,26 +26,18 @@ var questions = [
     },
     {
         question: "The 'function' and 'var' are known as:",
-        choice1: "Keywords",
-        choice2: "Datatypes",
-        choice3: "Declaration statements",
-        choice4: "Prototypes",
-        answer: 3,
+        choices: ["Keywords", "Datatypes", "Declaration statements", "Prototypes"],
+        answer: 'Declaration states',
     },
     {
         question: "Which one of the following operators returns false if both values are equal?",
-        choice1: "!",
-        choice2: "!==",
-        choice3: "!=",
-        choice4: "All of the above",
-        answer: 3,
+        choices: ["!", '!==', '!=', 'All of the above'],
+        answer: '!=,'
     },
     {
-        question: "Which one of the following symbols is used for creating comments?",
-        choice1: "\\",
-        choice2: "//",
-        choice4: "\**/",
-        answer: 2,
+        question: "Which function is used to serialize an object into a JSON sting?",
+        choices: ['stringify()','parse()','covert()','None of the above'],
+        answer: 'stringify()',
     }
 ]
 
@@ -57,7 +47,7 @@ const MAX_QUESTIONS = 5
 var startGame = function(){
 //  hide the home container
 homeContainer.classList.add('hidden')
-// display teh questions container
+// display the questions container
 quizContainer.classList.remove('hidden')
 // start the timer
 
