@@ -12,10 +12,8 @@
 <body>
     <div class="container">
         <div id="game" class="game-buttons">
-            <div class="display">
-                <p class="progressText">
-                    Question
-                </p>
+            <div class="timer">
+                <p>Time:</p>
             </div>
             <p class="score-display">
                 Score
@@ -25,21 +23,16 @@
             </h1>
             <div class="question">Question</div>
             <div class="choice-container">
-                <p class="choice-title">A</p>
-                <p class="choice-text" data-number="1">Choice1</p>
+                <ul id="choices"></ul>
+                <p id="correct"></p>
+                <p id="wrong"></p>    
             </div>
-            <div class="choice-container">
-                <p class="choice-title">B</p>
-                <p class="choice-text" data-number="2">Choice2</p>
-            </div>
-            <div class="choice-container">
-                <p class="choice-title">C</p>
-                <p class="choice-text" data-number="3">Choice3</p>
-            </div>
-            <div class="choice-container">
-                <p class="choice-title">D</p>
-                <p class="choice-text" data-number="4">Choice4</p>
-            </div>
+
+            <section class="score-display">
+                <p>Final score: </p>
+                <p>Intials: </p>
+                <button type="submit">Submit</button>
+            </section>
         </div>
     </div>
     <script src="./assets/script.js"></script>
