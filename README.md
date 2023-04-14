@@ -9,6 +9,7 @@ This is a JavaScript quiz that is 5 questions long. A timer will start once you 
 ![javascript](https://user-images.githubusercontent.com/127162545/231917958-acdd1640-be66-45e4-8144-9ec2ccc3d76b.JPG)
 
 https://github.com/sarahxomargaret/Javascript-Quiz
+
 https://sarahxomargaret.github.io/Javascript-Quiz/
 
 ## License
