@@ -1,12 +1,15 @@
 # Javascript-Quiz
 
-## Description
+## Description 
+
+This is a JavaScript quiz that is 5 questions long. A timer will start once you hit the start button. If you answer correctly, points will be taken off of the time. At the end of the quiz, you are given an option to submit your initals into the high score page. 
 
 ## Usage
 
 ![javascript](https://user-images.githubusercontent.com/127162545/231917958-acdd1640-be66-45e4-8144-9ec2ccc3d76b.JPG)
 
 https://github.com/sarahxomargaret/Javascript-Quiz
+https://sarahxomargaret.github.io/Javascript-Quiz/
 
 ## License
 
