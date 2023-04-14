@@ -36,3 +36,14 @@ body {
     text-align: center;
 }
 
+.highscore-btn {
+    font-size: 2.4rem;
+    padding: 2rem 5rem;
+    width: 30rem;
+    text-align: right;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(90deg, black, 0%, gray, 100%);
+    border-radius: 4px;
+}

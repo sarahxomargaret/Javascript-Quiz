@@ -7,6 +7,8 @@ const incorrectAnswer = document.querySelector('#incorrectAnswer');
 var startBtn = document.getElementById('start')
 var homeContainer = document.getElementById('home')
 var quizContainer = document.getElementById('quiz')
+var timer = 100;
+var timeInterval = 0;
 
 var index = 0
 let score = 0
@@ -84,4 +86,10 @@ function runQuestion(){
 
 
 // create event listener to start the game
-startBtn.addEventListener('click', startGame)
+startBtn.addEventListener('click', startGame, function(){
+    timerEl.textContent= 'Time: ' + time;
+    timeInterval = setInterval(function(){
+        time--;
+        timerEl.textContent = "Time: " + time;
+    }, 1000)
+})
