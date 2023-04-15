@@ -4,18 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz</title>
     <link rel="stylesheet" href="./assets/style.css">
-    <title>Javascript Quiz</title>
 </head>
+
 <body>
-    <h2><a href="/highscores.html" id="highsore-btn" class="btn">High Scores</a></h2>
-    <div class="container">
-        <div id="home" class="home-buttons">
-            <h1>Javascript Quiz</h1>
-            <button id="start" class="btn">Play</button>
-        </div>   
-        <div id="quiz" class="hidden"></div> 
-    </div>
+<main>    
+    <nav class="highscore-timer">
+        <button class="highscores">View high scores</button>
+        <div id="score" class="hidden"></div>
+        <div id="timer"></div>
+    </nav>
+    <section id="quiz" class="center">
+        <div class="quizbox">
+                <h1 class ="title">JavaScript Quiz</h1>
+                    <p class="rules">Answer all questions in time but if a wrong answer is clicked, 10 seconds will be deducted from the timer.</p>
+                    <button class ="start">Start Quiz</button>
+        </div>
+    </section>
+    <section id ="test" class = "hidden">
+        <div class = "center">
+            <h2 class = "questionText"></h2>
+            <ul class = "questionOptions"></ul>
+            <div id="correct"></div>
+            <div id="wrong"></div>
+        </div>
+    </section>
+    <section id = "scoreinput" class = "hidden">
+        <div class = "center">
+            <h1 class="scoreDisplay"></h1>
+            <h1>Submit your initals here</h1>
+            <input type="text" class="intials" id="signup"/>
+            <button class ="highScoreSubmit">Submit</button>
+        </div>
+    </section>
+
+
+
+    <section id="topScores" class="hidden">
+        <h1 class = "header">High Scores</h1>
+        <ol class="header">
+            <li></li>
+        </ol>
+    </section>
 <script src="./assets/script.js"></script>
+</main>
 </body>
 </html>

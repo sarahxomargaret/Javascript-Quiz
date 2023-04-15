@@ -1,11 +1,10 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap');
 
-:root {
+:root{
     background-color: rgb(186, 139, 230);
 }
 
-*{
+* {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
@@ -13,44 +12,30 @@
     font-family: 'Urbanist';
 }
 
-/* home page styling */
 h1 {
-    font-size: 5.4rem;
+    font-size: 3rem;
     color: rgb(85, 0, 85);
     margin-bottom: 5rem;
 }
 
 h2 {
-    font-size: 4.2rem;
+    font-size: 2rem;
+    color: rgb(85, 0, 85);
     margin-bottom: 4rem;
 }
 
-.container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 80rem;
-    margin: 0 auto;
-    padding: 2rem;
+.rules{
+    font-size: 1rem;
+    color: rgb(85, 0, 85);
+    margin-bottom: 1rem;
+    text-align: center; 
 }
 
-.home-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
-.hidden {
-    display: none;
-}
-
-.btn{
+.start{
     font-size: 2.4rem;
-    padding: 2rem 5rem;
-    width: 30rem;
+    padding: 2rem 2rem;
+    width: 20rem;
     text-align: center;
     margin-bottom: 1rem;
     text-decoration: none;
@@ -59,10 +44,94 @@ h2 {
     border-radius: 4px;
 }
 
-.btn:hover {
+.start:hover {
     cursor: pointer;
     box-shadow: 0 0.4rem 1.4rem rgb(85, 0, 85);
     transition: 150ms;
 }
+
+.highscores{
+    font-size: 2rem;
+    padding: 2rem 2rem;
+    width: 20rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(90deg, black 0%, gray 100%);
+    border-radius: 4px;
+}
+
+.highscores:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem rgb(85, 0, 85);
+    transition: 150ms;
+}
+
+.center {
+    position: fixed;
+    top: 30%;
+    left: 30%;
+}
+
+.title {
+    text-align: center;  
+}
+
+.quizbox {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.initals {
+    cursor: pointer;
+}
+
+
+
+.start {
+    margin: 0 25%;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+.scoreDisplay {
+    text-align: center;
+} 
+
+
+
+/* high scores */
+ol {
+    font-size: 2rem;
+    color: rgb(85, 0, 85);
+    margin-bottom: 4rem;
+}
+
+li {
+    padding-bottom: 5rem;
+    list-style-position: inside;
+}
+
+.header {
+    text-align: center;
+}
+
+.highscore-timer {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
 
 
