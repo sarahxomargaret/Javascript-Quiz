@@ -6,7 +6,8 @@ This is a JavaScript quiz that is 5 questions long. A timer will start once you 
 
 ## Usage
 
-![javascript](https://user-images.githubusercontent.com/127162545/231917958-acdd1640-be66-45e4-8144-9ec2ccc3d76b.JPG)
+![revampedjavascript](https://user-images.githubusercontent.com/127162545/232249447-7a26c4f4-26c0-481b-9778-3abdd9809d72.JPG)
+
 
 https://github.com/sarahxomargaret/Javascript-Quiz
 
