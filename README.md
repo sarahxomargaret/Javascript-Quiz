@@ -2,7 +2,7 @@
 
 ## Description 
 
-This is a JavaScript quiz that is 5 questions long. A timer will start once you hit the start button. If you answer correctly, points will be taken off of the time. At the end of the quiz, you are given an option to submit your initals into the high score page. 
+This is a JavaScript quiz that is 5 questions long. A timer will start once you hit the start button. If you answer incorrectly, 10 seconds will be taken off of the time. At the end of the quiz, you are given an option to submit your initals into the high score page. 
 
 ## Usage
 
